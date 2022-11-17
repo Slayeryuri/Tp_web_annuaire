@@ -34,7 +34,8 @@
     <div v-else>
       <h4>Personne ajoutée avec succès!</h4>
       <button class="btn btn-success" @click="resetForm">Ajouter une nouvelle personne</button>
-    </div>
+      <a href="/personnes/" class="badge badge-warning">Revenir à l'annuaire général</a>
+    </div>   
   </div>
 </template>
 

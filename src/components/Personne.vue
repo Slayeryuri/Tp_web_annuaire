@@ -27,26 +27,20 @@
 
 <!-- <div class="form-group">
        <label for="name"> Ville </label>  
-       <input type="text" class="form-control" id="city" v-model="currentPersonne.city">
+       <input type="text" class="form-control" id="city" v-model="">
      </div>
 -->
-
-
-  </div>
-  
-
-
-    <!-- A INCLURE DANS LE FORM -->
     <button class="badge badge-danger mr-2"
       @click="deletePersonne">
       Supprimer
-    </button>
-
-    <!-- A INCLURE DANS LE FORM -->
+    </button> 
     <button type="submit" class="badge badge-success"
       @click="updatePersonne">
       Modifier
     </button>
+
+  </div>  
+
     <p>{{ message }}</p>
 
 
@@ -83,7 +77,6 @@ export default {
           this.currentPersonne = response.data;
           console.log(response.data);
           this.message = 'Personne modifiée avec succès!';
-
         })
         .catch(e => {console.log(e);}
           );
