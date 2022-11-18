@@ -2,7 +2,7 @@
   <div class="submit-form">
 
     <div v-if="!submitted">
-      <!-- A COMPLETER -->
+     
 
       <h2>Ajouter une nouvelle Personne</h2>
       <div class="form-group">
@@ -72,7 +72,6 @@ export default {
       .then(response => {
           console.log(response.data);
           console.log("oui");
-          this.message = response.data;
           this.submitted = true;
         })
         .catch(e => {

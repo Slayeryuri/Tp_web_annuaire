@@ -1,13 +1,14 @@
 <template>
 
   <div v-if="currentPersonne">
-    
-    {{ currentPersonne.id }}
+    <div class="submit-form">
+      <H4>
+   <p class="text-success"> #{{ currentPersonne.id }} </p>
     {{ currentPersonne.name }}
     {{ currentPersonne.surname }}
     {{ currentPersonne.phone }}
     {{ currentPersonne.city }}
-
+      </H4>
     <div class="form-group">
        <label for="name"> Nom </label>  
        <input type="text" class="form-control" id="name" v-model="currentPersonne.name">
@@ -38,7 +39,7 @@
       @click="updatePersonne">
       Modifier
     </button>
-
+  </div>
   </div>  
 
     <p>{{ message }}</p>
@@ -87,7 +88,7 @@ export default {
         .then(response => {
           this.currentPersonne = response.data;
           console.log(response.data);
-          this.$router.push({ name:"personnes" });
+          this.$router.push("/personnes");
         })
         .catch(e => {
           console.log(e);
