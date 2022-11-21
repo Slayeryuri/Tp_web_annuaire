@@ -1,51 +1,40 @@
 <template>
-
   <div v-if="currentPersonne">
     <div class="submit-form">
       <H4>
-   <p class="text-success"> #{{ currentPersonne.id }} </p>
-    {{ currentPersonne.name }}
-    {{ currentPersonne.surname }}
-    {{ currentPersonne.phone }}
-    {{ currentPersonne.city }}
+        <p class="text-success"> #{{ currentPersonne.id }} </p>
+        {{ currentPersonne.name }}
+        {{ currentPersonne.surname }}
+        {{ currentPersonne.phone }}
+        {{ currentPersonne.city }}
       </H4>
-    <div class="form-group">
-       <label for="name"> Nom </label>  
-       <input type="text" class="form-control" id="name" v-model="currentPersonne.name">
+      <div class="form-group">
+        <label for="name"> Nom </label>  
+        <input type="text" class="form-control" id="name" v-model="currentPersonne.name">
+      </div>
+      <div class="form-group">
+         <label for="name"> Prénom </label>  
+         <input type="text" class="form-control" id="surname" v-model="currentPersonne.surname">
+      </div>
+      <div class="form-group">
+         <label for="name"> Téléphone </label>  
+         <input type="number" class="form-control" id="phone" v-model="currentPersonne.phone">
+      </div>
+      <div class="form-group">
+         <label for="name"> Ville </label>  
+         <input type="text" class="form-control" id="city" v-model="currentPersonne.city">
+      </div>
+      <button class="badge badge-danger mr-2"
+        @click="deletePersonne">
+        Supprimer
+      </button> 
+      <button type="submit" class="badge badge-success"
+        @click="updatePersonne">
+        Modifier
+      </button>
     </div>
-    <div class="form-group">
-       <label for="name"> Prénom </label>  
-       <input type="text" class="form-control" id="surname" v-model="currentPersonne.surname">
-    </div>
-    <div class="form-group">
-       <label for="name"> Téléphone </label>  
-       <input type="number" class="form-control" id="phone" v-model="currentPersonne.phone">
-    </div>
-    <div class="form-group">
-       <label for="name"> Ville </label>  
-       <input type="text" class="form-control" id="city" v-model="currentPersonne.city">
-    </div>
-
-<!-- <div class="form-group">
-       <label for="name"> Ville </label>  
-       <input type="text" class="form-control" id="city" v-model="">
-     </div>
--->
-    <button class="badge badge-danger mr-2"
-      @click="deletePersonne">
-      Supprimer
-    </button> 
-    <button type="submit" class="badge badge-success"
-      @click="updatePersonne">
-      Modifier
-    </button>
-  </div>
   </div>  
-
-    <p>{{ message }}</p>
-
-
-    
+  <p>{{ message }}</p>
 </template>
 
 <script>
@@ -68,8 +57,7 @@ export default {
         })
         .catch(e => {
           console.log(e);
-        });
-      
+        });     
     },
 
     updatePersonne() {

@@ -20,8 +20,6 @@ class PersonneDataService {
   update(data){
     return http.put("/entree", data);
   }
-
-
 }
 
 export default new PersonneDataService();

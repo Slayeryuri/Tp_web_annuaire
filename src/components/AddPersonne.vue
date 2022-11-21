@@ -1,9 +1,6 @@
 <template>
   <div class="submit-form">
-
     <div v-if="!submitted">
-     
-
       <h2>Ajouter une nouvelle Personne</h2>
       <div class="form-group">
          <label for="name"> ID </label>  
@@ -25,12 +22,9 @@
          <label for="name"> Ville </label>  
          <input type="text" class="form-control" id="city" v-model="personne.city">
       </div>
-
-
       <button @click="creerPersonne" class="btn btn-success">Ajouter</button>
       <p>{{ message }}</p>
-    </div>
-        
+    </div>        
     <div v-else>
       <h4>Personne ajoutée avec succès!</h4>
       <button class="btn btn-success" @click="resetForm">Ajouter une nouvelle personne</button>
@@ -67,7 +61,6 @@ export default {
         city: this.personne.city,
       };
 
-      // A COMPLETER
       PersonneDataService.create(data)
       .then(response => {
           console.log(response.data);
@@ -77,8 +70,7 @@ export default {
         .catch(e => {
           console.log(e);
           console.log("non");
-          this.message = 'Id déja existant!';
-       
+          this.message = 'Id déja existant!';    
       });
     },
     
@@ -92,7 +84,6 @@ export default {
 
 <style>
 .submit-form {
-  /*max-width: 300px;*/
   max-width: 400px;
   margin: auto;
 }
