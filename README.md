@@ -6,6 +6,7 @@
 ```
 npm install -g @vue/cli
 ```
+## test mod by georges
 
 ## Télécharger le projet template
 - Télécharger le zip sur Github
